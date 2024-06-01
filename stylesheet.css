@@ -1,0 +1,113 @@
+    .charts {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        border: 1px solid #ccc;
+        /* Add border */
+        border-radius: 1px;
+        /* Add border radius */
+        overflow: hidden;
+        /* Hide overflow content */
+
+        /* Add grid properties */
+        display: grid;
+        grid-template-columns: repeat(2, 4fr);
+        /* Three columns with equal width */
+        grid-gap: 0px;
+        /* Gap between grid items */
+        background-image: url('https://wallpapers.com/images/featured-full/white-grid-y1drey6ssm8x37sn.jpg');
+    }
+
+    .chart__title {
+        display: flex;
+        /* Use flexbox */
+        justify-content: center;
+        /* Center horizontally */
+        align-items: center;
+        /* Center vertically */
+        margin: 0;
+        padding: 10px;
+        font-weight: bold;
+        background-color: #f4f4f4;
+        /* Background color */
+        border-bottom: 1px solid #ccc;
+        /* Border bottom */
+    }
+
+    .chart--horiz .chart__bar {
+        height: 50px;
+        /* Increase height */
+    }
+
+    .chart__bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0;
+        background: linear-gradient(to left, #4cb8c4, #3cd3ad);
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        opacity: 0;
+        animation: 1s anim-lightspeed-in ease forwards;
+        border: 1px solid #fff;
+        list-style: none;
+        /* Remove bullet point */
+    }
+
+    .chart__label {
+        padding: 0 10px;
+        /* Adjust padding */
+        line-height: 30px;
+        color: white;
+        background-color: #4cb8c4;
+        /* Background color */
+        border: 1px solid #3cd3ad;
+        /* Border */
+        border-radius: 4px;
+        /* Border radius */
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        /* Box shadow */
+    }
+
+    @keyframes anim-lightspeed-in {
+        0% {
+            transform: translateX(-200%);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .chart__bar:hover::after {
+        content: attr(data-percentage);
+        /* Show percentage as tooltip */
+        position: absolute;
+        top: 0;
+        left: 100%;
+        /* Position to the left of the bar */
+        padding: 5px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        border-radius: 4px;
+        white-space: nowrap;
+    }
+
+    #wordCloud {
+        width: 100%;
+        height: 400px;
+        border: 1px solid #ccc;
+        position: relative;
+    }
+
+    #chartdiv {
+        width: 100%;
+        height: 400px;
+        border: 1px solid #ccc;
+        position: relative;
+    }
